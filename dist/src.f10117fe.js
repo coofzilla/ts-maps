@@ -136897,6 +136897,10 @@ var User = function () {
     };
   }
 
+  User.prototype.markerContent = function () {
+    return "User: " + this.name;
+  };
+
   return User;
 }();
 
@@ -136926,7 +136930,12 @@ var Company = function () {
       lat: parseFloat(faker_1.default.address.latitude()),
       lng: parseFloat(faker_1.default.address.longitude())
     };
-  }
+  } //interface looking specifically for this method
+
+
+  Company.prototype.markerContent = function () {
+    return "\n    <div>\n      <h1>Company Name: " + this.companyName + "</h1>\n      <h3>Catchphrase: " + this.catchPhrase + "</h3>\n    </div>\n    ";
+  };
 
   return Company;
 }();
@@ -136964,7 +136973,7 @@ var CustomMap = function () {
     });
     marker.addListener('click', function () {
       var infoWindow = new google.maps.InfoWindow({
-        content: 'hi there'
+        content: mappable.markerContent()
       });
       infoWindow.open(_this.googleMap, marker);
     });
