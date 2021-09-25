@@ -136941,6 +136941,7 @@ Object.defineProperty(exports, "__esModule", {
 exports.CustomMap = void 0;
 
 var CustomMap = function () {
+  //anytime create instnace of class calls constructor
   function CustomMap(divId) {
     this.googleMap = new google.maps.Map(document.getElementById(divId), {
       zoom: 1,
@@ -136952,12 +136953,20 @@ var CustomMap = function () {
   }
 
   CustomMap.prototype.addMarker = function (mappable) {
-    new google.maps.Marker({
+    var _this = this;
+
+    var marker = new google.maps.Marker({
       map: this.googleMap,
       position: {
         lat: mappable.location.lat,
         lng: mappable.location.lng
       }
+    });
+    marker.addListener('click', function () {
+      var infoWindow = new google.maps.InfoWindow({
+        content: 'hi there'
+      });
+      infoWindow.open(_this.googleMap, marker);
     });
   };
 
