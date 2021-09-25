@@ -1,6 +1,9 @@
 //start up w/ parcel index.html
 import { User } from './User';
-import { Company } from './Company';
-import { CustomMap } from '../CustomMap';
+// import { Company } from './Company';
+import { CustomMap } from './CustomMap';
 
-new CustomMap('map');
+const user = new User();
+const customMap = new CustomMap('map');
+
+customMap.addUserMarker(user);
