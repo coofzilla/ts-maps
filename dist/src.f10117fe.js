@@ -136900,7 +136900,7 @@ var User = function () {
   }
 
   User.prototype.markerContent = function () {
-    return "User: " + this.name;
+    return "\n    <div>\n      <h1>User: " + this.name + "</h1>\n    </div>\n\n    ";
   };
 
   return User;
@@ -137000,9 +137000,11 @@ var Company_1 = require("./Company");
 var CustomMap_1 = require("./CustomMap");
 
 var user = new User_1.User();
+var userTwo = new User_1.User();
 var company = new Company_1.Company();
 var customMap = new CustomMap_1.CustomMap('map');
 customMap.addMarker(user);
+customMap.addMarker(userTwo);
 customMap.addMarker(company);
 },{"./User":"src/User.ts","./Company":"src/Company.ts","./CustomMap":"src/CustomMap.ts"}],"../../../../../../../usr/local/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];

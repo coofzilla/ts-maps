@@ -11,7 +11,7 @@ export class User implements Mappable {
     lng: number;
   };
   color: string = 'purple';
-  
+
   //initilization
   //command click library to get pseudo documentation
   constructor() {
@@ -24,6 +24,11 @@ export class User implements Mappable {
   }
 
   markerContent(): string {
-    return `User: ${this.name}`;
+    return `
+    <div>
+      <h1>User: ${this.name}</h1>
+    </div>
+
+    `;
   }
 }
