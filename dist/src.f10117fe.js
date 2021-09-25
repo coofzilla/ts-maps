@@ -136883,12 +136883,14 @@ Object.defineProperty(exports, "__esModule", {
 exports.User = void 0; //type definition file f/adapting js library, use files from definitely typed/npm
 
 var faker_1 = __importDefault(require("faker")); //if export like this then import using { User }
+//implements tells ts to make sure this instance satisfies interface reqs
 
 
 var User = function () {
   //initilization
   //command click library to get pseudo documentation
   function User() {
+    this.color = 'purple';
     this.name = faker_1.default.name.firstName();
     this.location = {
       //faker library returns string so convert with parseFloat
@@ -136924,6 +136926,7 @@ var faker_1 = __importDefault(require("faker"));
 var Company = function () {
   //must initialize properties first
   function Company() {
+    this.color = 'blue';
     this.companyName = faker_1.default.company.companyName();
     this.catchPhrase = faker_1.default.company.catchPhrase();
     this.location = {
@@ -137029,7 +137032,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51466" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "62521" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
